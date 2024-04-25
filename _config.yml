@@ -1,1 +1,128 @@
-theme: jekyll-theme-cayman
+# from clhenrick
+
+# Title of your website
+title: "Olivia Weseley - Portfolio"
+
+title_short: "Olivia Weseley"
+
+# The description is used on homepage and in the footer to quickly describe your website. Use a maximum of 150 characters for SEO-purposes.
+description: "Welcome to my code portfolio. Make yourself at home."
+
+# Main author of the website
+# See > authors.yml
+author: olwesel
+
+plugins: [jekyll-paginate]
+
+
+# Paginates all X entries
+paginate: 3
+
+
+# Pagination path › Important for blog page in /blog/ to work
+paginate_path: "blog/page:num"
+
+
+# Theme works best with Kramdown (using the table of contents function)
+markdown: kramdown
+#highlight: rouge
+
+kramdown:
+  #input: GFM
+  # https://github.com/jekyll/jekyll/pull/4090
+  syntax_highlighter: rouge
+
+  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
+  # span, block element options fall back to global
+  syntax_highlighter_opts:
+    # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: 'highlight'
+    #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+permalink: /:categories/:title/
+excerpt_separator: "<!--more-->"
+include: ['.htaccess']
+# Exclude these files from your production _site
+exclude:
+    - .sass-cache
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - INSTALL.md
+    - tmp
+    - scripts
+    - old_blog_content
+    - .vscode
+
+
+# The language setting is used in /includes/header.html for html-settings
+language: "en"
+
+
+# Used › default.html front-matter and compress.html
+# Options › http://jch.penibelst.de
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  profile: false
+  ignore:
+    envs: [development]
+
+# Default Settings
+
+defaults:
+  -
+    scope:
+      path: "" 				# an empty string here means all files in the project
+      type: "pages"
+    values:
+      show_meta: true 	# Hide metadata for all pages
+      # sidebar:    		# Possible values › left, right › by default there will be no sidebar
+      comments: false
+      author: clhenrick     # Default author for pages
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      show_meta: true   # Show metadata for all posts
+      # sidebar:        # Possible values › left, right › by default there will be no sidebar
+      comments: true
+      author: clhenrick     # Default author for posts
+
+
+#  Open _data/navigation.yml to adjust the left and right topbar navigation
+
+
+favicon-32x32:                          "favicon-32x32.png"
+touch-icon-192x192:                     "touch-icon-192x192.png"
+apple-touch-icon-180x180-precomposed:   "apple-touch-icon-180x180-precomposed.png"
+apple-touch-icon-152x152-precomposed:   "apple-touch-icon-152x152-precomposed.png"
+apple-touch-icon-144x144-precomposed:   "apple-touch-icon-144x144-precomposed.png"
+apple-touch-icon-120x120-precomposed:   "apple-touch-icon-120x120-precomposed.png"
+apple-touch-icon-114x114-precomposed:   "apple-touch-icon-114x114-precomposed.png"
+apple-touch-icon-76x76-precomposed:     "apple-touch-icon-76x76-precomposed.png"
+apple-touch-icon-72x72-precomposed:     "apple-touch-icon-72x72-precomposed.png"
+apple-touch-icon-precomposed:           "apple-touch-icon-precomposed.png"
+msapplication_tileimage:                "msapplication_tileimage.png"               # Size 144x144
+msapplication_tilecolor:                "#fabb00"
+
+#og_image:                           "http://images.phlow.de/phlow/phlow_de-logo-512x.png"
+#og_locale:                          "en_EN"
+#og_type:                            "website"
+#og_title:                           "Feeling Responsive – A Responsive Theme for Jekyll"
+#og_description:                     "Feeling Responsive is built on the fabulous Foundation Framework and comes with lots of features to show your content right."
+# og_url:                           ""
+# og_site_name:                     ""
+
+sass:
+    sass_dir: _sass
+    sourcemap: develpment
+    style: :compressed
