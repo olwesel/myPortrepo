@@ -38,6 +38,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
+title: [The title of your site]
+description: [A short description of your site's purpose]
+  
   # Deployment job
   deploy:
     environment:
