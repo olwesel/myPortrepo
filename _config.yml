@@ -13,3 +13,10 @@ description: "Welcome to my code portfolio. Make yourself at home."
 author: olwesel
 
 plugins: [jekyll-paginate]
+
+
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+- jekyll-remote-theme
+title: "Olivia Weseley's Coding Portfolio"
+description: [A short description of your site's purpose]
